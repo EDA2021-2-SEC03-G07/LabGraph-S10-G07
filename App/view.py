@@ -31,6 +31,7 @@ import threading
 from App import controller
 from DISClib.ADT import stack
 assert config
+import time
 
 """
 La vista se encarga de la interacción con el usuario.
@@ -83,8 +84,11 @@ def optionThree(cont):
 
 
 def optionFour(cont, initialStation):
+    start= time.process_time()
     controller.minimumCostPaths(cont, initialStation)
-
+    end= time.process_time()
+    msg= (end-start)
+    print(msg)
 
 def optionFive(cont, destStation):
     haspath = controller.hasPath(cont, destStation)
